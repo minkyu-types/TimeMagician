@@ -2,10 +2,8 @@ package com.kyutypes.app.presentation
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -19,12 +17,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.kyutypes.app.presentation.ui.theme.Convert
-import com.kyutypes.app.presentation.ui.theme.Home
-import com.kyutypes.app.presentation.ui.theme.Result
+import com.kyutypes.app.domain.usecase.HistoryUseCases
+import com.kyutypes.app.presentation.ui.TmScreen
 import com.kyutypes.app.presentation.ui.theme.TimeMagicianTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,17 +33,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LayoutHomePreview()
-            val navController = rememberNavController()
-            val home = Home
-            val convert = Convert
-            val result = Result
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LayoutHome() {
+fun LayoutHome(
+) {
+    val useCases = HistoryUseCases()
+    val viewModel = HomeViewModel(useCases)
+    val navController = rememberNavController()
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -57,20 +59,28 @@ fun LayoutHome() {
             )
         }
     ) { innerPadding ->
-        BodyContent(Modifier.padding(innerPadding))
+        val uiState by viewModel.uiState.collectAsState(initial = 1)
+
+        NavHost(
+            navController = navController,
+            startDestination = TmScreen.Home.name,
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            composable(route = TmScreen.Home.name) {
+
+            }
+            composable(route = TmScreen.Convert.name) {
+
+            }
+            composable(route = TmScreen.Result.name) {
+
+            }
+        }
     }
 }
 
 fun doSomething() {
     Log.e("Do something ya", "H A L A")
-}
-
-@Composable
-fun BodyContent(modifier: Modifier) {
-    Column(modifier = modifier) {
-        Text(text = "Hi there!")
-        Text(text = "Thanks!")
-    }
 }
 
 @Preview

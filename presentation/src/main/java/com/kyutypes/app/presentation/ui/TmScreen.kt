@@ -1,10 +1,10 @@
-package com.kyutypes.app.presentation.ui.theme
+package com.kyutypes.app.presentation.ui
 
-sealed class Screen(val route: String)
-
-object Home: Screen(route = "home")
-object Convert: Screen(route = "convert")
-object Result: Screen(route = "result")
+enum class TmScreen {
+    Home,
+    Convert,
+    Result
+}
 
 /*
  1. Sealed 클래스의 서브 클래스들은 반드시 같은 파일 내에 선언되어야 함
