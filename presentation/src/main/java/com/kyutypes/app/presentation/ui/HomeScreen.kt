@@ -18,7 +18,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kyutypes.app.domain.usecase.HistoryUseCases
-import com.kyutypes.app.presentation.HomeViewModel
+import com.kyutypes.app.presentation.viewmodel.HomeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

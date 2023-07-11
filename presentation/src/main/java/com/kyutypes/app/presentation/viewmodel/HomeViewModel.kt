@@ -1,4 +1,4 @@
-package com.kyutypes.app.presentation
+package com.kyutypes.app.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.kyutypes.app.domain.repository.HistoryRepository
