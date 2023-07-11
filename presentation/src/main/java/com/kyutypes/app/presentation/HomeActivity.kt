@@ -25,7 +25,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kyutypes.app.domain.usecase.HistoryUseCases
-import com.kyutypes.app.presentation.ui.TmScreen
+import com.kyutypes.app.presentation.ui.LayoutHome
+import com.kyutypes.app.presentation.ui.Screens
 import com.kyutypes.app.presentation.ui.theme.TimeMagicianTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,52 +36,6 @@ class MainActivity : ComponentActivity() {
             LayoutHomePreview()
         }
     }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun LayoutHome(
-) {
-    val useCases = HistoryUseCases()
-    val viewModel = HomeViewModel(useCases)
-    val navController = rememberNavController()
-
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(text = "Time Magician")
-                },
-                actions = {
-                    IconButton(onClick = { doSomething() }) {
-                        Icon(Icons.Filled.Favorite, contentDescription = null)
-                    }
-                }
-            )
-        }
-    ) { innerPadding ->
-        val uiState by viewModel.uiState.collectAsState(initial = 1)
-
-        NavHost(
-            navController = navController,
-            startDestination = TmScreen.Home.name,
-            modifier = Modifier.padding(innerPadding)
-        ) {
-            composable(route = TmScreen.Home.name) {
-
-            }
-            composable(route = TmScreen.Convert.name) {
-
-            }
-            composable(route = TmScreen.Result.name) {
-
-            }
-        }
-    }
-}
-
-fun doSomething() {
-    Log.e("Do something ya", "H A L A")
 }
 
 @Preview

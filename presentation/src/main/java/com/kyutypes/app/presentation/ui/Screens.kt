@@ -1,6 +1,6 @@
 package com.kyutypes.app.presentation.ui
 
-enum class TmScreen {
+enum class Screens {
     Home,
     Convert,
     Result
