@@ -27,3 +27,4 @@ local.properties
 /.idea/misc.xml
 /presentation/src/main/java/com/kyutypes/app/presentation/ui/theme/Type.kt
 /.idea/vcs.xml
+/.idea/inspectionProfiles/Project_Default.xml

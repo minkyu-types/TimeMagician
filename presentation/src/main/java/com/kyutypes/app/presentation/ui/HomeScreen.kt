@@ -44,8 +44,7 @@ fun LayoutHome(
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState(initial = 1)
 
-        NavHost(
-            navController = navController,
+        NavHost(navController = navController,
             startDestination = Screens.Home.name,
             modifier = Modifier.padding(innerPadding)
         ) {
