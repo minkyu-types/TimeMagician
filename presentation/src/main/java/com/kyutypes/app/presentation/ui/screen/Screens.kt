@@ -1,4 +1,4 @@
-package com.kyutypes.app.presentation.ui
+package com.kyutypes.app.presentation.ui.screen
 
 enum class Screens {
     Home,

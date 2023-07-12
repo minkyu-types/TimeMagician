@@ -1,4 +1,4 @@
-package com.kyutypes.app.presentation.ui
+package com.kyutypes.app.presentation.ui.screen
 
 import android.util.Log
 import androidx.compose.foundation.layout.padding

@@ -1,5 +1,9 @@
 package com.kyutypes.app.data.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "history")
 data class HistoryEntity(
-    val id: Long
+    @PrimaryKey val id: Long
 )
