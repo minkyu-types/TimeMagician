@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class GetAllHistoriesUseCase(
     private val historyRepository: HistoryRepository
 ) {
-    fun execute(): Flow<HistoryModel> {
+    fun execute(): Flow<List<HistoryModel>> {
         return historyRepository.getAllHistories()
     }
 }
