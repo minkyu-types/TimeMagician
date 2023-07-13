@@ -39,7 +39,8 @@ fun LayoutHome(
             )
         }
     ) { innerPadding ->
-        NavHost(navController = navController,
+        NavHost(
+            navController = navController,
             startDestination = Screens.Home.name,
             modifier = Modifier.padding(innerPadding)
         ) {
