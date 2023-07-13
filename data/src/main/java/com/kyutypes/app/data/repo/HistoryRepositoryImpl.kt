@@ -1,8 +1,6 @@
 package com.kyutypes.app.data.repo
 
 import com.kyutypes.app.data.datasource.HistoryDataSource
-import com.kyutypes.app.data.db.LocalDatabase
-import com.kyutypes.app.data.entity.HistoryEntity
 import com.kyutypes.app.data.mapper.HistoryMapper
 import com.kyutypes.app.domain.model.HistoryModel
 import com.kyutypes.app.domain.repository.HistoryRepository
@@ -26,18 +24,21 @@ class HistoryRepositoryImpl @Inject constructor(
             .map { historyMapper.toModel(it) }
     }
 
-    override fun createHistory(historyModel: HistoryModel) {
-        val historyEntity = historyMapper.toEntity(historyModel)
+    override fun createHistory(history: HistoryModel) {
+        val historyEntity = historyMapper.toEntity(history)
         return historyDataSource
             .createHistory(historyEntity)
 
     }
 
     override fun updateHistory(history: HistoryModel) {
-        TODO("Not yet implemented")
+        val historyEntity = historyMapper.toEntity(history)
+        return historyDataSource
+            .updateHistory(historyEntity)
     }
 
     override fun deleteHistory(id: Long) {
-        TODO("Not yet implemented")
+        return historyDataSource
+            .deleteHistory(id)
     }
 }
