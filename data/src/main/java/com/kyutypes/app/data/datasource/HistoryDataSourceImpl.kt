@@ -1,26 +1,39 @@
 package com.kyutypes.app.data.datasource
 
+import com.kyutypes.app.data.db.LocalDatabase
 import com.kyutypes.app.data.entity.HistoryEntity
 import kotlinx.coroutines.flow.Flow
 
-class HistoryDataSourceImpl: HistoryDataSource {
+class HistoryDataSourceImpl(
+    private val localDatabase: LocalDatabase
+): HistoryDataSource {
     override fun getAllHistories(): Flow<List<HistoryEntity>> {
-        TODO("Not yet implemented")
+        return localDatabase
+            .historyDao()
+            .getAll()
     }
 
     override fun getHistory(id: Long): Flow<HistoryEntity> {
-        TODO("Not yet implemented")
+        return localDatabase
+            .historyDao()
+            .get(id)
     }
 
     override fun createHistory(history: HistoryEntity) {
-        TODO("Not yet implemented")
+        return localDatabase
+            .historyDao()
+            .create(history)
     }
 
     override fun updateHistory(history: HistoryEntity) {
-        TODO("Not yet implemented")
+        return localDatabase
+            .historyDao()
+            .update(history)
     }
 
     override fun deleteHistory(id: Long) {
-        TODO("Not yet implemented")
+        return localDatabase
+            .historyDao()
+            .delete(id)
     }
 }
