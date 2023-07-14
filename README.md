@@ -15,12 +15,13 @@ International time conversion
 - BDD + DDD
 
 ## 사용 기술
+- Jetpack
+  - Compsoe
+  - Navigation
+  - Room
 - Coroutine
 - Hilt
 - RxJava3
 - Glide
 - Lottie
 - Mockk
-- Jetpack compose
-- Jetpack navigation
-- Jetpack room
