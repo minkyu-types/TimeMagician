@@ -8,6 +8,7 @@ International time conversion
 - Kotlin 1.8.0
 - Jdk 11
 - Kotest 5.3.2
+- Gradle 7.5(7.4.2)
 
 ## 구조 및 진행
 - MVVM
