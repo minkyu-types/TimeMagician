@@ -7,11 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.supervisorScope
 import kotlin.system.measureTimeMillis
-
 
 class TimeZoneDataSourceImpl(
     private val timeZoneConverter: TimeZoneConverter
@@ -21,12 +21,12 @@ class TimeZoneDataSourceImpl(
             .convert(source, target)
     }
 
-    override fun saveTimeZone(source: TimeZoneModel) {
+    override suspend fun saveTimeZone(source: TimeZoneModel) {
         timeZoneConverter
             .save(source)
     }
 
-    override fun getSavedTimeZone(): TimeZoneModel {
+    override suspend fun getSavedTimeZone(): Flow<TimeZoneModel?> {
         return timeZoneConverter
             .get()
     }

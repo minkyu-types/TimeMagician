@@ -6,7 +6,7 @@ import com.kyutypes.app.domain.repository.TimeZoneRepository
 class ConvertTimeZoneUseCase(
     private val timeZoneRepository: TimeZoneRepository
 ) {
-    fun execute(source: TimeZoneModel, target: TimeZoneModel): TimeZoneModel {
+    fun execute(source: TimeZoneModel, target: String): TimeZoneModel {
         return timeZoneRepository
             .convertTimeZone(source, target)
     }
