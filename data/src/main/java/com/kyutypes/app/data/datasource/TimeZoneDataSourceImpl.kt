@@ -1,5 +1,6 @@
 package com.kyutypes.app.data.datasource
 
+import com.kyutypes.app.data.TimeZoneConverter
 import com.kyutypes.app.domain.model.TimeZoneModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,20 +13,21 @@ import kotlinx.coroutines.supervisorScope
 import kotlin.system.measureTimeMillis
 
 
-class TimeZoneDataSourceImpl: TimeZoneDataSource {
+class TimeZoneDataSourceImpl(
+    private val timeZoneConverter: TimeZoneConverter
+): TimeZoneDataSource {
     override fun convertTimeZone(source: TimeZoneModel, target: TimeZoneModel): TimeZoneModel {
-        TODO("Not yet implemented")
+        return timeZoneConverter
+            .convert(source, target)
     }
-}
 
-fun main() = runBlocking {
-    GlobalScope.launch {
-
+    override fun saveTimeZone(source: TimeZoneModel) {
+        timeZoneConverter
+            .save(source)
     }
-    CoroutineScope(Dispatchers.Main).launch {
 
-    }
-    supervisorScope {
-
+    override fun getSavedTimeZone(): TimeZoneModel {
+        return timeZoneConverter
+            .get()
     }
 }
