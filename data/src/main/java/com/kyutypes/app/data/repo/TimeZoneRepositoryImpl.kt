@@ -7,7 +7,7 @@ import com.kyutypes.app.domain.repository.TimeZoneRepository
 class TimeZoneRepositoryImpl(
     private val timeZoneDataSource: TimeZoneDataSource
 ): TimeZoneRepository {
-    override fun convertTimeZone(source: TimeZoneModel, target: TimeZoneModel): TimeZoneModel {
+    override fun convertTimeZone(source: TimeZoneModel, target: String): TimeZoneModel {
         return timeZoneDataSource
             .convertTimeZone(source, target)
     }

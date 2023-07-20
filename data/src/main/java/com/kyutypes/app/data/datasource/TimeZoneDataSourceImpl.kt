@@ -16,7 +16,7 @@ import kotlin.system.measureTimeMillis
 class TimeZoneDataSourceImpl(
     private val timeZoneConverter: TimeZoneConverter
 ): TimeZoneDataSource {
-    override fun convertTimeZone(source: TimeZoneModel, target: TimeZoneModel): TimeZoneModel {
+    override fun convertTimeZone(source: TimeZoneModel, target: String): TimeZoneModel {
         return timeZoneConverter
             .convert(source, target)
     }

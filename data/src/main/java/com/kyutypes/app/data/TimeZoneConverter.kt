@@ -3,7 +3,7 @@ package com.kyutypes.app.data
 import com.kyutypes.app.domain.model.TimeZoneModel
 
 class TimeZoneConverter {
-    fun convert(source: TimeZoneModel, target: TimeZoneModel): TimeZoneModel {
+    fun convert(source: TimeZoneModel, target: String): TimeZoneModel {
         TODO()
     }
 
