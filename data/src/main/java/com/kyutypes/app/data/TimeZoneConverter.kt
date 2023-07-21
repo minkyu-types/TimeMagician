@@ -20,6 +20,11 @@ class TimeZoneConverter(
     private val recentTime = stringPreferencesKey("RecentTime")
     private val recentAbbreviation = stringPreferencesKey("RecentAbbreviation")
 
+    var name: String = "Minkyu"
+    var surName : String = "Kim"
+    val fullName
+        get() = "$name $surName"
+
     fun convert(source: TimeZoneModel, target: String): TimeZoneModel {
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
 
