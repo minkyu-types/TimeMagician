@@ -6,7 +6,7 @@ import com.kyutypes.app.domain.repository.TimeZoneRepository
 class SaveTimeZoneUseCase(
     private val timeZoneRepository: TimeZoneRepository
 ) {
-    fun execute(source: TimeZoneModel): Unit {
+    suspend fun execute(source: TimeZoneModel): Unit {
         return timeZoneRepository
             .saveTimeZone(source)
     }
