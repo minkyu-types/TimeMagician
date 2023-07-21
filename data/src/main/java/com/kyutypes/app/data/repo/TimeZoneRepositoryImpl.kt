@@ -3,6 +3,7 @@ package com.kyutypes.app.data.repo
 import com.kyutypes.app.data.datasource.TimeZoneDataSource
 import com.kyutypes.app.domain.model.TimeZoneModel
 import com.kyutypes.app.domain.repository.TimeZoneRepository
+import kotlinx.coroutines.flow.Flow
 
 class TimeZoneRepositoryImpl(
     private val timeZoneDataSource: TimeZoneDataSource
@@ -12,11 +13,11 @@ class TimeZoneRepositoryImpl(
             .convertTimeZone(source, target)
     }
 
-    override fun saveTimeZone(source: TimeZoneModel) {
+    override suspend fun saveTimeZone(source: TimeZoneModel) {
         timeZoneDataSource.saveTimeZone(source)
     }
 
-    override fun getSavedTimeZone(): TimeZoneModel? {
+    override suspend fun getSavedTimeZone(): Flow<TimeZoneModel?> {
         return timeZoneDataSource
             .getSavedTimeZone()
     }

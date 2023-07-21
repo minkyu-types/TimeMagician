@@ -21,7 +21,7 @@ class TimeZoneDataSourceImpl(
             .convert(source, target)
     }
 
-    override suspend fun saveTimeZone(source: TimeZoneModel) {
+    override suspend fun saveTimeZone(source: TimeZoneModel): Unit {
         timeZoneConverter
             .save(source)
     }
