@@ -4,8 +4,9 @@ import com.kyutypes.app.data.datasource.TimeZoneDataSource
 import com.kyutypes.app.domain.model.TimeZoneModel
 import com.kyutypes.app.domain.repository.TimeZoneRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class TimeZoneRepositoryImpl(
+class TimeZoneRepositoryImpl @Inject constructor(
     private val timeZoneDataSource: TimeZoneDataSource
 ): TimeZoneRepository {
     override fun convertTimeZone(source: TimeZoneModel, target: String): TimeZoneModel {

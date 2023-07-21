@@ -3,8 +3,9 @@ package com.kyutypes.app.data.datasource
 import com.kyutypes.app.data.db.LocalDatabase
 import com.kyutypes.app.data.entity.HistoryEntity
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class HistoryDataSourceImpl(
+class HistoryDataSourceImpl @Inject constructor(
     private val localDatabase: LocalDatabase
 ): HistoryDataSource {
     override fun getAllHistories(): Flow<List<HistoryEntity>> {

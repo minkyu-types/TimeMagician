@@ -1,5 +1,6 @@
 package com.kyutypes.app.presentation.ui.screen
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
@@ -23,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.kyutypes.app.presentation.ui.theme.TimeMagicianTheme
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Preview
 @Composable
 fun LayoutConvertPreview() {
@@ -35,8 +37,7 @@ fun LayoutConvertPreview() {
                 topBar = {
                     TopAppBar()
                 },
-            ) { a ->
-                a.calculateBottomPadding()
+            ) {
                 TabLayout()
             }
         }
@@ -87,10 +88,10 @@ fun TabLayout() {
 
 @Composable
 fun LayoutTimeZone() {
-
+    Text("This is TimeZone Tab")
 }
 
 @Composable
 fun LayoutRegion() {
-
+    Text("This is Region Tab")
 }
