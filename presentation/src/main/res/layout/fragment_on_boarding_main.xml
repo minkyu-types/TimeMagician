@@ -15,6 +15,7 @@
             android:layout_height="match_parent"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_next"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_margin="12dp"

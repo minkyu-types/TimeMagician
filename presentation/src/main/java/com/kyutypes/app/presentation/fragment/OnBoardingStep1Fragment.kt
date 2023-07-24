@@ -1,11 +1,7 @@
 package com.kyutypes.app.presentation.fragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import com.kyutypes.app.presentation.R
 import com.kyutypes.app.presentation.databinding.FragmentOnBoardingStep1Binding
 
 class OnBoardingStep1Fragment : BaseFragment<FragmentOnBoardingStep1Binding>() {
@@ -18,14 +14,6 @@ class OnBoardingStep1Fragment : BaseFragment<FragmentOnBoardingStep1Binding>() {
         inflater: LayoutInflater,
         container: ViewGroup?
     ): FragmentOnBoardingStep1Binding {
-        TODO("Not yet implemented")
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_boarding_step1, container, false)
+        return FragmentOnBoardingStep1Binding.inflate(inflater, container, false)
     }
 }
