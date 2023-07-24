@@ -9,25 +9,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class OnBoardingViewModel @Inject constructor(
     private val historyUseCases: HistoryUseCases
 ): ViewModel() {
     private val _uiState = MutableStateFlow(0)
     val uiState: Flow<Int> = _uiState.asStateFlow()
-
-    sealed class UiEvent {
-        object IncrementCounter: UiEvent()
-        class ChooseCountry(number: Int): UiEvent()
-    }
-
-    fun onEvent(event: UiEvent) {
-        when(event) {
-            is UiEvent.IncrementCounter -> {
-
-            }
-            is UiEvent.ChooseCountry -> {
-
-            }
-        }
-    }
 }

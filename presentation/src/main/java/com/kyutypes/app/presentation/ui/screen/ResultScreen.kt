@@ -30,3 +30,7 @@ fun LayoutResult() {
         a.calculateBottomPadding()
     }
 }
+
+fun doSomething() {
+
+}
