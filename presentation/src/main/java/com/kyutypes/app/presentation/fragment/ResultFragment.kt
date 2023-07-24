@@ -6,8 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kyutypes.app.presentation.R
+import com.kyutypes.app.presentation.databinding.FragmentResultBinding
 
-class ResultFragment : Fragment() {
+class ResultFragment : BaseFragment<FragmentResultBinding>() {
+
+    companion object {
+        fun newInstance() = ResultFragment()
+    }
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentResultBinding {
+        TODO("Not yet implemented")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

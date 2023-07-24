@@ -6,8 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kyutypes.app.presentation.R
+import com.kyutypes.app.presentation.databinding.FragmentConvertBinding
 
-class ConvertFragment : Fragment() {
+class ConvertFragment : BaseFragment<FragmentConvertBinding>() {
+
+    companion object {
+        fun newInstance() = ConvertFragment()
+    }
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentConvertBinding {
+        TODO("Not yet implemented")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

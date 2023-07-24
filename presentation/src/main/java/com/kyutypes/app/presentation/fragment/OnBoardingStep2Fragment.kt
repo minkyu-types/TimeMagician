@@ -6,8 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kyutypes.app.presentation.R
+import com.kyutypes.app.presentation.databinding.FragmentOnBoardingStep2Binding
 
-class OnBoardingStep2Fragment : Fragment() {
+class OnBoardingStep2Fragment : BaseFragment<FragmentOnBoardingStep2Binding>() {
+
+    companion object {
+        fun newInstance() = OnBoardingStep2Fragment()
+    }
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentOnBoardingStep2Binding {
+        TODO("Not yet implemented")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

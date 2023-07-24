@@ -30,4 +30,12 @@
         android:name="com.kyutypes.app.presentation.fragment.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/historyFragment2"
+        android:name="com.kyutypes.app.presentation.fragment.HistoryFragment"
+        android:label="HistoryFragment" />
+    <fragment
+        android:id="@+id/onBoardingMainFragment"
+        android:name="com.kyutypes.app.presentation.fragment.OnBoardingMainFragment"
+        android:label="OnBoardingMainFragment" />
 </navigation>
