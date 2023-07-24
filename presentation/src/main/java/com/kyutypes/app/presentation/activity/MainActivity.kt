@@ -1,14 +1,13 @@
 package com.kyutypes.app.presentation.activity
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import android.os.PersistableBundle
+import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
     }
 }
