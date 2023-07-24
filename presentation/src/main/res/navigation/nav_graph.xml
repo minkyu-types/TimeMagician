@@ -3,39 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/convertFragment">
+    app:startDestination="@id/onBoardingMainFragment">
 
     <fragment
         android:id="@+id/convertFragment"
         android:name="com.kyutypes.app.presentation.fragment.ConvertFragment"
         android:label="fragment_convert"
-        tools:layout="@layout/fragment_convert" />
-    <fragment
-        android:id="@+id/onBoardingStep1Fragment"
-        android:name="com.kyutypes.app.presentation.fragment.OnBoardingStep1Fragment"
-        android:label="fragment_on_boarding_step1"
-        tools:layout="@layout/fragment_on_boarding_step1" />
-    <fragment
-        android:id="@+id/onBoardingStep2Fragment"
-        android:name="com.kyutypes.app.presentation.fragment.OnBoardingStep2Fragment"
-        android:label="fragment_on_boarding_step2"
-        tools:layout="@layout/fragment_on_boarding_step2" />
-    <fragment
-        android:id="@+id/onBoardingStep3Fragment"
-        android:name="com.kyutypes.app.presentation.fragment.OnBoardingStep3Fragment"
-        android:label="fragment_on_boarding_step3"
-        tools:layout="@layout/fragment_on_boarding_step3" />
+        tools:layout="@layout/fragment_convert" >
+        <action
+            android:id="@+id/action_convertFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_convertFragment_to_historyFragment2"
+            app:destination="@id/historyFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.kyutypes.app.presentation.fragment.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+
     <fragment
-        android:id="@+id/historyFragment2"
+        android:id="@+id/historyFragment"
         android:name="com.kyutypes.app.presentation.fragment.HistoryFragment"
-        android:label="HistoryFragment" />
+        android:label="fragment_history" />
+
     <fragment
         android:id="@+id/onBoardingMainFragment"
         android:name="com.kyutypes.app.presentation.fragment.OnBoardingMainFragment"
-        android:label="OnBoardingMainFragment" />
+        android:label="framgent_onboarding_main" >
+        <action
+            android:id="@+id/action_onBoardingMainFragment_to_convertFragment"
+            app:destination="@id/convertFragment" />
+    </fragment>
 </navigation>

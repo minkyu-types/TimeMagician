@@ -14,7 +14,6 @@ class OnBoardingPagerAdapter(f: Fragment) : FragmentStateAdapter(f) {
         when (position) {
             1 -> OnBoardingStep1Fragment.newInstance()
             2 -> OnBoardingStep2Fragment.newInstance()
-            3 -> OnBoardingStep3Fragment.newInstance()
-            else -> error("OnBoarding Process ERROR!")
+            else -> OnBoardingStep3Fragment.newInstance()
         }
 }
