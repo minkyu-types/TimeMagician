@@ -37,11 +37,8 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-    buildFeatures {
-        dataBinding true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.2"
+    dataBinding {
+        enabled = true
     }
     packagingOptions {
         resources {
