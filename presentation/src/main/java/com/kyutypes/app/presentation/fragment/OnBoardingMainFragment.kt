@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.kyutypes.app.presentation.databinding.FragmentOnBoardingMainBinding
 import com.kyutypes.app.presentation.view.OnBoardingPagerAdapter
+import com.kyutypes.app.presentation.viewmodel.OnBoardingViewModel
 
 class OnBoardingMainFragment : BaseFragment<FragmentOnBoardingMainBinding>() {
+    private val viewModel: OnBoardingViewModel by viewModels()
+
     private lateinit var viewPager: ViewPager2
     private lateinit var nextButton: Button
 

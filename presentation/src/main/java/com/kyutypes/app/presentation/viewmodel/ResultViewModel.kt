@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ResultViewModel @Inject constructor(
-    private val historyUseCases: HistoryUseCases
+
 ): ViewModel() {
     private val _uiState = MutableStateFlow(0)
     val uiState: Flow<Int> = _uiState.asStateFlow()
