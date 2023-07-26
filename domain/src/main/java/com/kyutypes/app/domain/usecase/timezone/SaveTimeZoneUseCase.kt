@@ -1,13 +1,13 @@
-package com.kyutypes.app.domain.timezone
+package com.kyutypes.app.domain.usecase.timezone
 
 import com.kyutypes.app.domain.model.TimeZoneModel
 import com.kyutypes.app.domain.repository.TimeZoneRepository
 
-class ConvertTimeZoneUseCase(
+class SaveTimeZoneUseCase(
     private val timeZoneRepository: TimeZoneRepository
 ) {
-    fun execute(source: TimeZoneModel, target: String): TimeZoneModel {
+    suspend fun execute(source: TimeZoneModel): Unit {
         return timeZoneRepository
-            .convertTimeZone(source, target)
+            .saveTimeZone(source)
     }
 }

@@ -1,4 +1,4 @@
-package com.kyutypes.app.domain.usecase
+package com.kyutypes.app.domain.usecase.history
 
 import com.kyutypes.app.domain.model.HistoryModel
 import com.kyutypes.app.domain.repository.HistoryRepository

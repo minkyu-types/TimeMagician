@@ -2,8 +2,8 @@ package com.kyutypes.app.timemagician
 
 import com.kyutypes.app.data.repo.HistoryRepositoryImpl
 import com.kyutypes.app.data.repo.TimeZoneRepositoryImpl
-import com.kyutypes.app.domain.timezone.TimeZoneUseCases
-import com.kyutypes.app.domain.usecase.HistoryUseCases
+import com.kyutypes.app.domain.usecase.timezone.TimeZoneUseCases
+import com.kyutypes.app.domain.usecase.history.HistoryUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

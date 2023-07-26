@@ -1,4 +1,4 @@
-package com.kyutypes.app.domain.timezone
+package com.kyutypes.app.domain.usecase.timezone
 
 import com.kyutypes.app.domain.repository.TimeZoneRepository
 

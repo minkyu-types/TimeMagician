@@ -1,13 +1,13 @@
-package com.kyutypes.app.domain.usecase
+package com.kyutypes.app.domain.usecase.history
 
 import com.kyutypes.app.domain.model.HistoryModel
 import com.kyutypes.app.domain.repository.HistoryRepository
 import kotlinx.coroutines.flow.Flow
 
-class GetAllHistoriesUseCase(
+class GetHistoryUseCase(
     private val historyRepository: HistoryRepository
 ) {
-    fun execute(): Flow<List<HistoryModel>> {
-        return historyRepository.getAllHistories()
+    fun execute(id: Long): Flow<HistoryModel> {
+        return historyRepository.getHistory(id)
     }
 }

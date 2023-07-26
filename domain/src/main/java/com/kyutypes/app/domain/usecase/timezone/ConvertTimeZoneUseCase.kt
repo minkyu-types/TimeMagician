@@ -1,14 +1,13 @@
-package com.kyutypes.app.domain.timezone
+package com.kyutypes.app.domain.usecase.timezone
 
 import com.kyutypes.app.domain.model.TimeZoneModel
 import com.kyutypes.app.domain.repository.TimeZoneRepository
-import kotlinx.coroutines.flow.Flow
 
-class GetSavedTimeZoneUseCase(
+class ConvertTimeZoneUseCase(
     private val timeZoneRepository: TimeZoneRepository
 ) {
-    suspend fun execute(): Flow<TimeZoneModel?> {
+    fun execute(source: TimeZoneModel, target: String): TimeZoneModel {
         return timeZoneRepository
-            .getSavedTimeZone()
+            .convertTimeZone(source, target)
     }
 }

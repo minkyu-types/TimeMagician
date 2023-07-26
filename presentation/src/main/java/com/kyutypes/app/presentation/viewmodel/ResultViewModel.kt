@@ -1,7 +1,6 @@
 package com.kyutypes.app.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.kyutypes.app.domain.usecase.HistoryUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

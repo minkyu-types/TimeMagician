@@ -11,7 +11,7 @@ import com.kyutypes.app.presentation.databinding.FragmentOnBoardingMainBinding
 import com.kyutypes.app.presentation.view.OnBoardingPagerAdapter
 import com.kyutypes.app.presentation.viewmodel.OnBoardingViewModel
 
-class OnBoardingMainFragment : BaseFragment<FragmentOnBoardingMainBinding>() {
+class OnBoardingMainFragment private constructor(): BaseFragment<FragmentOnBoardingMainBinding>() {
     private val viewModel: OnBoardingViewModel by viewModels()
 
     private lateinit var viewPager: ViewPager2
