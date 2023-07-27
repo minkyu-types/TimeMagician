@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/onBoardingMainFragment"
-        android:name="com.kyutypes.app.presentation.fragment.OnBoardingMainFragment"
+        android:name="com.kyutypes.app.presentation.fragment.OnBoardingFragment"
         android:label="framgent_onboarding_main" >
         <action
             android:id="@+id/action_onBoardingMainFragment_to_convertFragment"
