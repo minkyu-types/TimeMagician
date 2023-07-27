@@ -4,7 +4,7 @@
     <string name="str_bottom_menu_convert">Convert</string>
     <string name="str_bottom_menu_history">History</string>
 
-    <string name="str_next">다음</string>
+    <string name="str_start">시작하기</string>
     <string name="str_complete">완료</string>
 
 </resources>
