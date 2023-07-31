@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import com.kyutypes.app.presentation.databinding.FragmentOnBoardingBinding
 import com.kyutypes.app.presentation.viewmodel.OnBoardingViewModel
 
-class OnBoardingFragment private constructor(): BaseFragment<FragmentOnBoardingBinding>() {
+class OnBoardingFragment constructor(): BaseFragment<FragmentOnBoardingBinding>() {
     private val viewModel: OnBoardingViewModel by viewModels()
 
     companion object {

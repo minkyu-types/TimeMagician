@@ -6,9 +6,10 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
 
 @HiltViewModel
-class HistoryViewModel (
+class HistoryViewModel @Inject constructor(
     private val historyUseCases: HistoryUseCases
 ): ViewModel() {
     private val _uiState = MutableStateFlow(0)
