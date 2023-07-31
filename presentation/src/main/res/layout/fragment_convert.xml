@@ -4,13 +4,115 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
         tools:context=".fragment.ConvertFragment">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidline_hori_20"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.2" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidline_ver_50"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/textview_title_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextViewBold20"
+                android:text="시간"
+                android:gravity="center"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guidline_hori_20" />
+
+            <Button
+                android:id="@+id/button_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select date"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidline_ver_50"
+                app:layout_constraintTop_toBottomOf="@+id/textview_title_time" />
+            <Button
+                android:id="@+id/button_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select Time"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toEndOf="@id/guidline_ver_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_title_time" />
+
+            <TextView
+                android:id="@+id/textview_title_timezone_source"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextViewBold18"
+                android:text="현재"
+                android:gravity="center"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidline_ver_50"
+                app:layout_constraintTop_toBottomOf="@+id/button_date" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_timezone_source"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidline_ver_50"
+                app:layout_constraintTop_toBottomOf="@+id/textview_title_timezone_source" />
+
+            <TextView
+                android:id="@+id/textview_title_timezone_target"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextViewBold18"
+                android:text="결과"
+                android:gravity="center"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toEndOf="@id/guidline_ver_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_time" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_timezone_target"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@+id/guidline_ver_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_title_timezone_target" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 </layout>
