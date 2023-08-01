@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_result_timezone_source"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/TextViewBold20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageview_arrow_right" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_result_time_source"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/TextViewBold18"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageview_arrow_right"
+            app:layout_constraintTop_toBottomOf="@id/textview_result_timezone_source" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageview_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_result_timezone_target"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/TextViewBold20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_arrow_right" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_result_time_target"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/TextViewBold18"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_arrow_right"
+            app:layout_constraintTop_toBottomOf="@id/textview_result_timezone_target" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
