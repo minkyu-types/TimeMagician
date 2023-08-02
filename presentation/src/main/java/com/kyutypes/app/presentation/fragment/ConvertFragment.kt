@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.kyutypes.app.presentation.databinding.FragmentConvertBinding
 import com.kyutypes.app.presentation.viewmodel.ConvertViewModel
+import kotlinx.coroutines.launch
 
 class ConvertFragment : BaseFragment<FragmentConvertBinding>() {
     private val viewModel: ConvertViewModel by viewModels()
@@ -40,6 +42,10 @@ class ConvertFragment : BaseFragment<FragmentConvertBinding>() {
 
     override fun onResume() {
         super.onResume()
+
+        lifecycleScope.launch {
+            viewModel.eventFlow.collect{ event -> handleEvent(event) }
+        }
     }
 
     override fun onPause() {
@@ -56,5 +62,26 @@ class ConvertFragment : BaseFragment<FragmentConvertBinding>() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    private fun handleEvent(event: ConvertViewModel.Event) = when(event) {
+        is ConvertViewModel.Event.ShowToast -> {
+
+        }
+        is ConvertViewModel.Event.SelectDate -> {
+
+        }
+        is ConvertViewModel.Event.SelectTime -> {
+
+        }
+        is ConvertViewModel.Event.SelectTimeZone -> {
+
+        }
+        is ConvertViewModel.Event.ConvertTime -> {
+
+        }
+        else -> {
+
+        }
     }
 }
