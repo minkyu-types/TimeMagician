@@ -34,6 +34,8 @@ abstract class BaseFragment<T: ViewBinding>: Fragment() {
 
     override fun onDestroyView() {
         _binding = null
+        _compositeDisposable?.clear()
+        _compositeDisposable = null
         super.onDestroyView()
     }
 }
